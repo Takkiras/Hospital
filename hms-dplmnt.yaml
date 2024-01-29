@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: hms
-        image: takkiras/hms:#{Build.BuildId}#
+        image: takkiras/hms:21
         ports:
         - containerPort: 80
