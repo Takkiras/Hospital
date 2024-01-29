@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hms-deployment
+  namespace: dev
+  labels:
+    app: hms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hms
+  template:
+    metadata:
+      labels:
+        app: hms
+    spec:
+      containers:
+      - name: hms
+        image: takkiras/hms:#{Build.BuildId}#
+        ports:
+        - containerPort: 80
